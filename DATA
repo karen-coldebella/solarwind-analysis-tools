@@ -1,0 +1,21 @@
+# 📁 `data/` Folder
+
+This folder should contain the input files used in the solar wind data analysis.  
+**These files are not versioned** in this repository to avoid issues with large file sizes or license restrictions.
+
+## 📂 Expected Data Types
+
+- **ACE Data (CDF format):**
+  - Example filename: `ACE_BROWSE_2015-001_to_2015-365.CDF`
+  - Source: [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/)
+
+- **OMNI Data (CDF format):**
+  - Example filename: `omni_min2015.dat`
+  - Source: [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/)
+
+
+## 🔖 Notes
+
+- Files must be placed manually in this folder.
+- Large or temporary binary files are ignored by Git (see `.gitignore`).
+- You may organize files by type or year if needed (e.g., `cdf/`, `omni/`, `hdf/`).
