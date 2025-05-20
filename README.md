@@ -42,10 +42,10 @@ solarwind-analysis-tools/
 
 Place the required data files inside the `data/` folder:
 
-- **ACE data**: `ACE_BROWSE_YYYY-001_to_YYYY-365.HDF` (converted or extracted from `.cdf`)
-- **OMNI data**: `omni_minYYYY.dat` (plain text)
+- **ACE data**: `ACE_BROWSE_YYYY-001_to_YYYY-365.CDF` (converted or extracted from `.cdf`)
+- **OMNI data**: `omni_minYYYY.CDF` (plain text)
 
-> Note: The original ACE files are in **.CDF format**. You can download the CDF files directly from [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/), and this tool uses `cdflib` to read them.
+> Note: You can download the CDF files directly from [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/), and this tool uses `cdflib` to read them.
 
 ---
 
