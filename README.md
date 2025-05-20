@@ -5,8 +5,9 @@ Developed as part of a doctoral research project in Space Geophysics at INPE (Br
 
 ## 📦 Description
 
-**solarwind-analysis-tools** is a Python-based tool for merging, analyzing, and plotting solar wind and geomagnetic parameters from ACE and OMNI data.  
-It enables quick diagnostics and high-resolution visualizations of space weather conditions, suitable for both research and educational purposes.
+**solarwind-analysis-tools** is a Python-based tool for merging, analyzing, and plotting solar wind and geomagnetic parameters from ACE and OMNI data in `.CDF` and `.dat` formats.  
+It enables quick diagnostics and high-resolution visualizations of space weather conditions, suitable for both research and educational purposes.  
+The code uses [`cdflib`](https://pypi.org/project/cdflib/) for reading CDF files and **does not rely on SpacePy or pySPEDAS**, ensuring lightweight, standalone usage.
 
 ## 🚀 Features
 
@@ -27,7 +28,7 @@ It enables quick diagnostics and high-resolution visualizations of space weather
 
 ```plaintext
 solarwind-analysis-tools/
-├── data/                # Raw HDF and TXT data files
+├── data/                # Raw CDF and TXT data files
 ├── figures/             # Output directory for generated plots
 ├── notebooks/           # Optional Jupyter notebooks
 ├── solarwind_plot.py    # Main plotting script
@@ -41,10 +42,10 @@ solarwind-analysis-tools/
 
 Place the required data files inside the `data/` folder:
 
-- **ACE data**: `ACE_BROWSE_YYYY-001_to_YYYY-365.HDF`
-- **OMNI data**: `omni_minYYYY.dat`
+- **ACE data**: `ACE_BROWSE_YYYY-001_to_YYYY-365.HDF` (converted or extracted from `.cdf`)
+- **OMNI data**: `omni_minYYYY.dat` (plain text)
 
-> Note: Make sure the files follow the correct naming convention and format.
+> Note: The original ACE files are in **.CDF format**. You can download the CDF files directly from [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/), and this tool uses `cdflib` to read them.
 
 ---
 
@@ -92,9 +93,12 @@ pip install -r requirements.txt
 - `numpy`
 - `matplotlib`
 - `h5py`
+- `cdflib`
 
 **Optional:**
 - `jupyter` — for notebook-based exploration
+
+> ❌ No need for `SpacePy` or `pySPEDAS`.
 
 ---
 
@@ -116,10 +120,10 @@ You are free to use, modify, and distribute this code with proper attribution.
 
 ## 🙋‍♀️ Author
 
-**Karen Ferreira**  
+**Karen Júlia Coldebella Ferreira**  
 Doctoral Researcher in Space Geophysics  
 [INPE - Instituto Nacional de Pesquisas Espaciais, Brazil](https://www.inpe.br)  
-GitHub: [@karen-ferreira](https://github.com/karen-ferreira)
+GitHub: [@karen-coldebella](https://github.com/karen-coldebella)
 
 ---
 
