@@ -248,6 +248,6 @@ axs[8].xaxis.set_major_formatter(FuncFormatter(custom_formatter))
 plt.setp(axs[8].get_xticklabels(), rotation=45)
 fig.align_ylabels(axs)  # Alinha os ylabels
 plt.tight_layout()
-plt.savefig('May30.png', dpi=300, bbox_inches='tight')
+plt.savefig('Figures/May30.png', dpi=300, bbox_inches='tight')
 plt.show()
 
