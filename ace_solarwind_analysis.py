@@ -11,17 +11,17 @@ from matplotlib.ticker import ScalarFormatter
 
 # 1 INTERVALO DE TEMPO
 # === Definir intervalo de tempo desejado ===
-start_time = datetime(2013, 5, 31, 12, 0)
-end_time = datetime(2013, 6, 3, 0, 0)
+start_time = datetime(2013, 8, 27, 0, 0)
+end_time = datetime(2013, 8, 30, 0, 0)
 
 
 # 2 ABRIR OS DADOS E EXTRAIR VARIÁVEIS
 # === Caminho para os dados ===
-caminho = r'C:\Users\karen\Programas\solarwind-analysis-tools\solarwind-data'
+caminho = r'C:\Users\karen\Programas\solarwind-analysis-tools\solarwind-data\evento5'
 
-arquivo_swe = 'ac_h0s_swe_20130530000009_20130605235904_cdaweb.cdf'
-arquivo_mfi = 'ac_h0s_mfi_20130530000004_20130605235947_cdaweb.cdf'
-arquivo_omni = 'omni_hro2s_1min_20130530000000_20130606000000_cdaweb.cdf'
+arquivo_swe = 'ac_h0s_swe_20130826000058_20130830235954_cdaweb.cdf'
+arquivo_mfi = 'ac_h0s_mfi_20130826000005_20130830235949_cdaweb.cdf'
+arquivo_omni = 'omni_hro2s_1min_20130826000000_20130831000000_cdaweb.cdf'
 
 caminho_arquivo_swe = os.path.join(caminho, arquivo_swe)
 caminho_arquivo_mfi = os.path.join(caminho, arquivo_mfi)
@@ -172,33 +172,38 @@ fig.subplots_adjust(hspace=0.2)
 
 # === Plotar índice DST (SYMH_index) ===
 axs[0].plot(epoch, df_merged['SYMH_index'], color='black')
-axs[0].set_ylabel('SYMH (nT)')
+axs[0].set_ylabel('SYMH (nT)', fontsize=14)
 axs[0].grid()
-axs[0].tick_params(labelbottom=False)
+axs[0].tick_params(axis='both', labelsize=12)
+axs[0].text(0.02, 0.85, '(a)', transform=axs[0].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar índice AE (AE_index) ===
 axs[1].plot(epoch, df_merged['AE_index'], color='black')
-axs[1].set_ylabel('AE (nT)')
+axs[1].set_ylabel('AE (nT)', fontsize=14)
 axs[1].grid()
-axs[1].tick_params(labelbottom=False)
+axs[1].tick_params(axis='both', labelsize=12)
+axs[1].text(0.02, 0.85, '(b)', transform=axs[1].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar Vp ===
 axs[2].plot(epoch, df_merged['Vp'], color='black')
-axs[2].set_ylabel('Vp (km/s)')
+axs[2].set_ylabel('Vp (km/s)', fontsize=14)
 axs[2].grid()
-axs[2].tick_params(labelbottom=False)
+axs[2].tick_params(axis='both', labelsize=12)
+axs[2].text(0.02, 0.85, '(c)', transform=axs[2].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar Np ===
 axs[3].plot(epoch, df_merged['Np'], color='black')
-axs[3].set_ylabel('Np (cm⁻³)')
+axs[3].set_ylabel('Np (cm⁻³)', fontsize=14)
 axs[3].grid()
-axs[3].tick_params(labelbottom=False)
+axs[3].tick_params(axis='both', labelsize=12)
+axs[3].text(0.02, 0.85, '(d)', transform=axs[3].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar Tpr ===
 axs[4].plot(epoch, df_merged['Tpr'], color='black')
-axs[4].set_ylabel('Tpr (K)')
+axs[4].set_ylabel('Tpr (K)', fontsize=14)
 axs[4].grid()
-axs[4].tick_params(labelbottom=False)
+axs[4].tick_params(axis='both', labelsize=12)
+axs[4].text(0.02, 0.85, '(e)', transform=axs[4].transAxes, fontsize=14, fontweight='bold')
 
 # Exibir Tpr em notação científica
 formatter = ScalarFormatter(useMathText=True)
@@ -208,46 +213,56 @@ axs[4].yaxis.set_major_formatter(formatter)
 
 # === Plotar |B| ===
 axs[5].plot(epoch, df_merged['Bmag'], color='black')
-axs[5].set_ylabel('|B| (nT)')
+axs[5].set_ylabel('|B| (nT)', fontsize=14)
 axs[5].grid()
-axs[5].tick_params(labelbottom=False)
+axs[5].tick_params(axis='both', labelsize=12)
+axs[5].text(0.02, 0.85, '(f)', transform=axs[5].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar Bz ===
 axs[6].plot(epoch, df_merged['Bz'], color='black')
-axs[6].set_ylabel('Bz (nT)')
+axs[6].set_ylabel('Bz (nT) GSE', fontsize=14)
 axs[6].grid()
-axs[6].tick_params(labelbottom=False)
+axs[6].tick_params(axis='both', labelsize=12)
+axs[6].text(0.02, 0.85, '(g)', transform=axs[6].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar Bx e By no mesmo painel ===
 axs[7].plot(epoch, df_merged['Bx'], color='black', label='Bx')
 axs[7].plot(epoch, df_merged['By'], color='red', label='By')
-axs[7].set_ylabel('B (nT)')
+axs[7].set_ylabel('B (nT) GSE', fontsize=14)
 axs[7].grid()
-axs[7].tick_params(labelbottom=False)
+axs[7].tick_params(axis='both', labelsize=12)
 axs[7].legend(loc='upper right', fontsize='small')
+axs[7].text(0.02, 0.85, '(h)', transform=axs[7].transAxes, fontsize=14, fontweight='bold')
 
 # === Plotar alpha_ratio ===
 axs[8].plot(epoch, df_merged['alpha_ratio'], color='black')
-axs[8].set_ylabel('α ratio')
+axs[8].set_ylabel('α ratio', fontsize=14)
 axs[8].grid()
-axs[8].tick_params(labelbottom=True)
-axs[8].set_xlabel('Time (UT)')
-# Formatador personalizado:
+axs[8].tick_params(axis='both', labelsize=12)
+axs[8].set_xlabel('Time (UT)', fontsize=14)
+
+# Formatador personalizado para o eixo X:
 locator = mdates.HourLocator(interval=3)
+
 def custom_formatter(x, pos):
     dt = mdates.num2date(x)
     if dt.hour == 0 and dt.minute == 0:
         return dt.strftime('%m/%d %H:%M')
     else:
         return dt.strftime('%H:00')
+
 axs[8].xaxis.set_major_locator(locator)
 axs[8].xaxis.set_major_formatter(FuncFormatter(custom_formatter))
-
+axs[8].text(0.02, 0.85, '(i)', transform=axs[8].transAxes, fontsize=14, fontweight='bold')
 
 # === Ajustar layout e salvar a figura ===
 plt.setp(axs[8].get_xticklabels(), rotation=45)
 fig.align_ylabels(axs)  # Alinha os ylabels
 plt.tight_layout()
-plt.savefig('Figures/May30.png', dpi=300, bbox_inches='tight')
-plt.show()
 
+output_folder = r'C:\Users\karen\Programas\solarwind-analysis-tools\Figures'
+os.makedirs(output_folder, exist_ok=True)
+
+output_file = os.path.join(output_folder, 'CIR_5.png')
+plt.savefig(output_file, dpi=300, bbox_inches='tight')
+plt.show()
