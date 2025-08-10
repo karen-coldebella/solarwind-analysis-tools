@@ -17,7 +17,7 @@ end_time = datetime(2013, 8, 30, 0, 0)
 
 # 2 ABRIR OS DADOS E EXTRAIR VARIÁVEIS
 # === Caminho para os dados ===
-caminho = r'C:\Users\karen\Programas\solarwind-analysis-tools\solarwind-data\evento5'
+caminho = r'C:\Users\karen\Programas\solarwind-analysis-tools\Data\ACE_OMNI\evento5'
 
 arquivo_swe = 'ac_h0s_swe_20130826000058_20130830235954_cdaweb.cdf'
 arquivo_mfi = 'ac_h0s_mfi_20130826000005_20130830235949_cdaweb.cdf'
